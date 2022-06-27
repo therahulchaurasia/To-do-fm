@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>TODO APP</title>
+  </head>
+  <body>
+    <main>
+      <!-- <h1>hello</h1> -->
+      <div class="background-img">
+        <!-- <img src="../images/bg-mobile-light.jpg" alt="" /> -->
+        <div class="logoandtoggle section">
+          <h1 class="logo">TODO</h1>
+          <button class="toggle">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                <path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"
+                />
+              </svg>
+            </span>
+            <span class="donot">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" >
+                <path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div class="lab section">
+          <form action="" class="formheader">
+           <input type="text" placeholder="Create a new todo..." class="main-input"></input> 
+           <span class="circle"> <img src="../images/radio_button_unchecked_FILL0_wght300_GRAD0_opsz24.svg" alt="circle"></span>
+      <button class="labeltick" type="submit"> 
+            <img src="../images/done_FILL0_wght100_GRAD0_opsz24.svg" alt=""></button> 
+          </form>
+        </div>
+
+        <div class="list-container section">
+          <!-- <div class="holdertext"><h4>- - Nothing to see here yet! - -</h4></div> -->
+          <ul class="list-start">
+          </ul>
+          <div class="main-li countandclear">
+            <h5 class="once">0 items left</h5> 
+            <div class="buttonsalias">
+            <ul class="forbtnsalias">
+              <li class="singlebtn">
+                <button class="btn active" data-id="all">all</button>
+              </li>
+              <li class="singlebtn">
+                <button class="btn" data-id="active">active</button>
+              </li>
+              <li class="singlebtn">
+                <button class="btn" data-id="completed">completed</button>
+              </li>
+            </ul> 
+          </div>
+            <button class="removebtn">clear completed</button>
+          </div>
+      
+        </div>
+        <div class="three-footer-btns section">
+          <ul class="forbtns">
+            <li class="singlebtn">
+              <button class="btn active" data-id="all">all</button>
+            </li>
+            <li class="singlebtn">
+              <button class="btn" data-id="active">active</button>
+            </li>
+            <li class="singlebtn">
+              <button class="btn" data-id="completed">completed</button>
+            </li>
+          </ul> 
+        </div>
+        <h6 class="end">Drag and drop to reorder list</h6>
+      </div>
+    </main>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

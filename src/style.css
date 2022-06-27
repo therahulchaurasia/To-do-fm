@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --BrightBlue: hsl(220, 98%, 61%);
+  --CheckBackground: linear-gradient(
+    to right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  /* light theme */
+  --Backmain: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --fontColor: hsl(236, 9%, 61%);
+  --fontColorBottom: hsl(236, 9%, 61%);
+  --shadow: 0px 25px 32px -7px #e2d8d8;
+  --Body: rgb(252, 252, 252);
+  --backgrdurl: url("../images/bg-mobile-light.jpg") center/cover no-repeat;
+  --backgrdurldsk: url(../images/bg-desktop-light.jpg) center/cover no-repeat;
+  --borderradii: 5px;
+  --filterval: contrast(0%) brightness(150%);
+  --transition: all 0.5s linear;
+  --caretColor: var(--BrightBlue);
+  --hoverColor: hsl(235, 15%, 32%); /* --VeryDarkGrayishBlue:  */
+}
+.dark-theme {
+  --backgrdurl: url("../images/bg-mobile-dark.jpg") center/cover no-repeat;
+  --backgrdurldsk: url(../images/bg-desktop-dark.jpg) center/cover no-repeat;
+  --Backmain: hsl(235, 24%, 19%); /*VeryDarkDesaturatedBlu */
+  --Body: hsl(235, 21%, 11%); /* VeryDarkBlue */
+  /* --fontColor: hsl(236, 9%, 61%); DarkGrayishBlue */
+  --fontColor: hsl(234, 39%, 85%);
+  --transition: all 0.5s linear;
+  --shadow: none;
+  --filterval: contrast(50%) brightness(150%); /*for the circle and cross*/
+  --caretColor: var(--BrightBlue);
+  --hoverColor: hsl(236, 33%, 92%); /*--LightGrayishBluehover */
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  background: var(--Body);
+  transition: var(--transition);
+  /* 
+- Font size: 18px */
+}
+
+main {
+  max-height: 100vh;
+  max-width: 100vw;
+}
+hr {
+  opacity: 25%;
+}
+.section {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+/* for image */
+.background-img {
+  background: var(--backgrdurl);
+  height: 29vh;
+  min-height: 230px;
+  transition: var(--transition);
+}
+/* for logo and toggle */
+.logoandtoggle {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3.5rem;
+  padding-bottom: 1.3rem;
+  transition: var(--transition);
+}
+.logo {
+  color: var(--VeryLightGrayishBlue);
+  letter-spacing: 0.6rem;
+  align-self: center;
+}
+.toggle {
+  background: transparent;
+  outline: none;
+  border: none;
+  max-width: 25px;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+}
+/* .same {
+  transform: translate(-100%, 0%);
+
+} */
+.donot {
+  display: none;
+}
+.lab {
+  height: auto;
+  position: relative;
+  transition: var(--transition);
+}
+.main-input {
+  width: 100%;
+  padding: 1.1rem 2.5rem;
+  outline: none;
+  border: none;
+  border-radius: var(--borderradii);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  align-self: flex-end;
+  background-color: var(--Backmain);
+  color: var(--fontColor);
+  margin-bottom: 1.3rem;
+  transition: var(--transition);
+  caret-color: var(--caretColor);
+}
+.circle {
+  position: absolute;
+  left: 2%;
+  top: 17%;
+  /* color: var(white); */
+  filter: var(--filterval);
+  transition: all 1s ease-in;
+}
+.labeltick {
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  filter: contrast(0.3);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+.show-tick {
+  display: block;
+}
+.holdertext {
+  padding: 1.1rem 2.5rem;
+  text-align: center;
+  background-color: var(--Backmain);
+  border-radius: 5px 5px 0 0;
+  transition: var(--transition);
+  color: var(--fontColor);
+}
+.main-li {
+  position: relative;
+  list-style: none;
+  background-color: var(--Backmain);
+  /* background-color: gray; */
+  padding: 1.1rem 2.5rem;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.draggable {
+  cursor: pointer;
+}
+.just-one {
+  color: var(--fontColor);
+}
+.another-one {
+  text-decoration: line-through;
+  color: grey;
+  transition: var(--transition);
+}
+
+.tick-circle,
+.cross-tick {
+  position: absolute;
+  background: transparent;
+  border: none;
+}
+
+.tick-circle {
+  left: 2%;
+  top: 25%;
+  transition: all 1s ease-in;
+  cursor: pointer;
+}
+.cross-tick {
+  right: 3%;
+  bottom: 35%;
+  filter: var(--filterval);
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+.tickmark {
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  display: none;
+}
+.checked {
+  display: block;
+  background-image: var(--CheckBackground);
+  border-radius: 50%;
+  padding: 5px;
+  top: 1px;
+  left: 2px;
+}
+.just-fill {
+  filter: var(--filterval);
+}
+
+.countandclear {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+  border-radius: 0 0 5px 5px;
+  transition: var(--transition);
+}
+.removebtn {
+  background: transparent;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  font-family: inherit;
+  color: var(--fontColorBottom);
+  font-weight: 500;
+  font-size: 12px;
+  /* opacity: 50%; */
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.once {
+  color: var(--fontColorBottom);
+  font-size: 12px;
+  font-weight: 500;
+}
+/* main list */
+/* footer btns */
+.three-footer-btns {
+  box-shadow: var(--shadow);
+  margin-bottom: 2.5rem;
+  transition: var(--transition);
+}
+.forbtns {
+  /* background-color: var(--VeryLightGray); */
+  background: var(--Backmain); /* rgb(252, 245, 245)*/
+  padding: 1.1rem 2.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  text-align: center;
+  transition: var(--transition);
+}
+.btn {
+  background: transparent;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  text-decoration: none;
+  color: var(--fontColorBottom);
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.btn:hover:not(.active),
+.removebtn:hover {
+  color: var(--hoverColor);
+  transition: var(--transition);
+}
+.active {
+  color: var(--BrightBlue);
+}
+.buttonsalias {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  .lab,
+  .list-container,
+  .logoandtoggle {
+    width: 60vw;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  .logoandtoggle {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  .background-img {
+    background: var(--backgrdurldsk);
+    height: 30vh;
+    min-height: 230px;
+  }
+  .countandclear {
+    margin-bottom: 2.5rem;
+  }
+
+  .buttonsalias {
+    max-width: inherit;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0;
+  }
+  .forbtnsalias {
+    width: 200px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .three-footer-btns {
+    display: none;
+  }
+  .cross-tick {
+    display: none;
+  }
+  .main-li:hover .cross-tick {
+    display: block;
+    transition: all 1s linear;
+  }
+}
+.end {
+  text-align: center;
+  color: var(--fontColorBottom);
+  transition: var(--transition);
+}
