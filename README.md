@@ -96,7 +96,7 @@ Users should be able to:
 
 ### What I learned
 
-### This project was a pretty cool experience there were multiple moving parts which had to be handled and I was able to handle them successfully. While building the project I learned the drag and drop feature and it's working and implemented it into the project. Use the localstorage functionality as well
+### This project was a pretty cool experience and there were multiple moving parts which had to be handled and I was able to handle them successfully. While building the project I learned the drag and drop feature and it's working and implemented it into the project. Used the localstorage functionality as well
 
 <hr>
 
